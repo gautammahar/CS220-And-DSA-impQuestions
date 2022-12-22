@@ -1,8 +1,19 @@
+/*
+Assignment 4
+Using the given linked list (suitably modified) do the following:
+1. Create a stack data structure that has functions Push and Pop.
+2. Take an input postfix expression from user. Evaluate the postfix expression and output the
+answer. Use the stack data structure you just now build.
+Read the attached document to understand postfix expressions.
+*/
+
+
 /* Name - Gautam Kumar Mahar 
    Roll.n. 2103114
    Branch - CSE
+   Date - 02/11/2022
    Assignment - 4 
-   */
+*/
 
 #include<stdio.h>          //Header files
 class Node{  // I define a class for implement liked list
