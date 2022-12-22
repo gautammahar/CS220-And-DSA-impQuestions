@@ -171,3 +171,4 @@ int main()
 	heap.printHeap();
 	printf("%d",heap.getSize());
 }
+// Thanks.
