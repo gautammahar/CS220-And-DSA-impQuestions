@@ -345,3 +345,103 @@ Answer - 8
 */
 
 
+/*
+Problem 22- 
+// what is output?
+#include <iostream>
+using namespace std;
+void fun(int n){
+    cout<<"hello"<<n<<endl;
+}
+void fun(char n){
+    cout<<"what's up"<<n<<endl;
+}
+int main(){
+    long long int a = 1e5 + 7;
+    fun(a);
+    return 0;
+}
+Answer - Error: call to 'fun is ambiguous
+*/
+
+/*
+Problem 23- 
+// what is output?
+#include <iostream>
+using namespace std;
+void fun(int *p, int *q){
+    p = q;
+   *p%= 7;
+   *q*=2;
+}
+int main(){
+    int a = 10, b = 20;
+    fun(&a, &b);
+    cout<<a<<" "<<b<<endl;
+    return 0;
+}
+Answer - 10 12
+*/
+
+/*
+Problem 24- GATE 2000
+// what is output?
+#include <iostream>
+using namespace std;
+The most appropriate matching for the following pairs 
+X: m=malloc(5); m =NULL;
+Y: free(n);n->value=5;
+Z: char*p; *p='a';
+
+1: using dangling
+2: using uninitialized pointers
+3: loat memory
+
+a) X-1, Y-3, Z-2
+b) X-2, Y-1, Z-3
+c) X-3, Y-2, Z-1
+d) X-3, Y-1, Z-2                 <--------- right answer
+*/
+
+
+/*
+Problem 25- 
+// what is output?
+#include <iostream>
+using namespace std;
+void fun(int *p){
+    int q = 10;
+    p = &q;
+}
+int main()
+{
+    int r = 20;
+    int *p = &r;
+    fun(p);
+    cout<*p<<endl;
+    return 0;
+}
+Answer - 20
+*/
+
+/*
+Problem 26- 
+// what is output?
+#include <iostream>
+using namespace std;
+void fun(int *p, int *q){
+    p = q;
+   *p%= 7;
+   *q*=2;
+}
+int main(){
+    int a = 10, b = 20;
+    fun(&a, &b);
+    cout<<a<<" "<<b<<endl;
+    return 0;
+}
+Answer - 10 12
+*/
+
+
+
