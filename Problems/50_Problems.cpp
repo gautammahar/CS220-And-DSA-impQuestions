@@ -424,24 +424,480 @@ int main()
 Answer - 20
 */
 
+
 /*
-Problem 26- 
+// Problem 26- 
 // what is output?
 #include <iostream>
 using namespace std;
-void fun(int *p, int *q){
-    p = q;
-   *p%= 7;
-   *q*=2;
-}
+
+char *p[] = {"HELLO", "THIS", "IS", "JAY"};
+char **q[] = {p+3, p+2, p+1, p};
+char ***r = q;
 int main(){
-    int a = 10, b = 20;
-    fun(&a, &b);
-    cout<<a<<" "<<b<<endl;
+    cout<<**++r<<" ";
+    cout<<*--*++r+2<<" ";
+    cout<<*r[-2]+1<<" ";
+    cout<<r[-1][-1]+1<<endl;
     return 0;
 }
-Answer - 10 12
+// Answer - IS LLO AY HIS
 */
+  
+/*
+Problem 27- 
+// what is output?
+#include <iostream>
+using namespace std;
+int main(){
+    int ch;
+    cin>>ch;
+    switch(ch){
+        case 'a': cout<<"a";break;
+        case 'e': cout<<"e";break;
+        case 'i': cout<<"i";break;
+        default: cout<<"consonant";
+        case 'o': cout<<"o";
+        casee 'u': cout<<"u";
+    }
+    cout<<endl;
+    return 0;
+}
+// Answer - consonant ou
+*/
+
+/*
+Problem 28- 
+// what is output?
+#include <iostream>
+using namespace std;
+int main(){
+    int a=32, *ptr = &a;
+    char ch = 'A', &cho = ch;
+    cho +=1;
+    *ptr += ch;
+    cout<< a << ", " << ch << endl;
+    return 0;
+}
+// Answer - 98,B
+*/
+
+/*
+// Problem 29- 
+// what is output?
+#include <iostream>
+using namespace std;
+typrdef struct A{
+    char a;
+    short int b;
+    double c;
+    char d;
+} oA;
+int main(){
+    cout<< sizepf(oA) << endl;
+    return 0;            
+}
+// Answer - 24
+*/
+
+// --------------------------------------------------- Now some easy problems -_-
+
+/*
+// Problem 30- 
+// what is output?
+#include <iostream>
+using namespace std;
+int main(){
+   string s;
+   cin>>s;
+   cout<<s<<endl;
+    return 0;            
+}
+// Input - Hello World!
+// Answer (output) - Hello
+*/
+
+
+/*
+// Problem 31- 
+// what is output?
+#include <iostream>
+using namespace std;
+int main(){
+    int a=2; b=7; c;
+    c = (a > b) ? a : b;
+    cout<<c;
+    return 0;            
+}
+// Answer - 7 
+*/
+
+
+/*
+// Problem 32- 
+// what is output?
+#include <iostream>
+using namespace std;
+int fun(int &x, int c){
+    c = c-1;
+    if(c==0) return 1;
+    x = x+1;
+    return fun(x,c) * x;
+}
+int main(){
+    int p =5;
+    cout<< fun(p,p) <<endl;
+    return 0;            
+}
+// Answer - 6561
+*/
+
+
+/*
+// Problem 33- 
+// what is output?
+#include <iostream>
+using namespace std;
+int main(){
+    int a = 10, b=5, c=3;
+    b != !a;
+    c = !!a;
+    cout<< b <<" "<< c << endl;
+    return 0;        
+}
+// Answer - 5 1
+*/
+
+
+/*
+// Problem 34- 
+// what is output?
+#include <iostream>
+using namespace std;
+int main(){\
+    const int x = 10;
+    int *ref = &x;
+    cout<< *ref;
+    return 0;            
+}
+// Answer - Error ( because of "we cannot point integer pointer to constant integer"  -> we can do like this "const int* ptr") 
+*/
+
+
+/*
+// Problem 35- 
+// what is output?
+#include <iostream>
+using namespace std;
+int main(){
+    int i =4;
+    cout<< i++ << i++ << i++ << endl;
+    return 0;            
+}
+// Answer - 4 5 6 
+*/
+
+
+/*
+// Problem 36- 
+// what is output?
+#include <iostream>
+using namespace std;
+int main(){
+    int i =4;
+    cout<< ++i << i++ <<endl;
+    return 0;            
+}
+// Answer -  5 5
+*/
+
+
+/*
+// Problem 37- 
+// what is output?
+#include <iostream>
+using namespace std;
+
+int main(){
+    const char *p = "Hello";
+    p++;
+    cout<< p << endl;
+    return 0;            
+}
+// Answer - ello
+*/
+
+
+/*
+// Problem 38- 
+// what is output?
+#include <iostream>
+using namespace std;
+
+int main(){
+    cout<< (int*)main << endl;
+    return 0;            
+}
+// Answer -> Address of main function <- will be printed.
+*/
+
+
+/*
+// Problem 39- 
+// what is output?
+#include <iostream>
+using namespace std;
+
+int main(){
+    int(*ptr)(int)= fun;
+    (*ptr)(3);
+    return 0;            
+}
+int fun(int n){
+    while(n--)
+    cout<<"Hello"<<endl;
+    return 0;
+}
+// Answer - error: use of undeclared identifier 'fun'
+*/
+
+/*
+// Problem 40- 
+// what is output?
+#include <iostream>
+using namespace std;
+int fun(int n){
+    while(n--)
+    cout<<"Hello"<<endl;
+    return 0;
+}
+int main(){
+    int(*ptr)(int)= fun;
+    (*ptr)(3);
+    return 0;            
+}
+// Answer - Hello
+            Hello
+            Hello
+*/
+
+/*
+// Problem 41- 
+// what is output?
+#include <iostream>
+using namespace std;
+
+int main(){
+    const int *ciData  = new int;  // This statement is fine -> const int* cidata - new int(5);
+    *ciData = 7;
+    cout<< *ciData <<endl;
+    return 0;            
+}
+// Answer -> error: read-only variablr is not assignable
+*/
+
+
+
+ /*
+// Problem 42- 
+// what is output?
+
+const int a =7;
+const int *p = &a;
+cout<< *++p << endl;
+// Answer -> Garbage
+*/
+
+
+/*
+// Problem 43- 
+// what is output?
+#include <iostream>
+using namespace std;
+
+int fun(int &b, int &a){
+    static int z=4;
+    while(--z>0){
+        fun(b, a);
+        a*=2;
+        b--;
+    }
+    return a+b+10;
+}
+int main(){
+    int a=5, b=7;
+    cout<< fun(a, b)<<endl;
+    cout << a << " "<<b <<endl;
+    return 0;
+}
+// Answer -> 68
+//          2 56
+*/
+
+
+/*
+// Problem 44- 
+// what is output?
+#include <iostream>
+using namespace std;
+int fun1(int n){
+    int t =n, out = 0;
+    while(t!=0){
+        out += t%10;
+        t /= 10;
+    }
+    return out;
+}
+int fun2(int n ){
+    if(n%2==0) return fun1(n);
+    else       return fun1(n%10 + n/10);
+}
+// Calculate the output of fun2(1001)
+// Answer -> 2
+*/
+
+
+
+/*
+// Problem 45- 
+// what is output?
+#include <iostream>
+using namespace std;
+int fun1(int n, int &x){
+    x = x+11;
+    n = n-12;
+    return 2*n+x;
+}
+int main(){
+    int n;
+    cin>>n;
+    n = fun1(n, n) -n;
+    cout << n << endl;
+    return 0;
+}
+//Calculate the output on n = 13
+// Answer -> 2
+*/
+
+/*
+// Problem 46- 
+// what is output?
+#include <iostream>
+using namespace std;
+void fun(int a, int b){
+    int temp - a;
+    b = a;
+    a = temp;
+}
+int main(){
+    int a,b;
+    cin>>a>>b;
+    cout<<a<<" "<<b;
+    return 0;
+}
+//Calculate the output on the input 3 4
+// Answer -> 3 4
+*/
+
+
+
+/*
+// Problem 47- 
+// what is output?
+#include <iostream>
+using namespace std;
+long long fun(long long n){
+    long long result = 0;
+    while(n!=0){
+        result = result*10 + n%10;
+        n /= 10;
+    }
+    return result;
+}
+int main(){
+    long long n;
+    cin>>n;
+    cout<<fun(n)<<endl;
+    return 0;
+}
+//Calculate the output on input n = 16337893829345
+// Answer -> 54392839873361
+*/
+
+
+/*
+// Problem 48- 
+// what is output?
+#include <iostream>
+using namespace std;
+int main(){
+    int a = 2.1;
+    float b = 2.1;
+    if(a==b) cout<<"Equal"<<endl;
+    else     cout<<"Not Equal"<<endl;
+    return 0;
+}
+Guess the output of this program
+// Answer -> Not Equal
+*/
+
+/*
+// Problem 49- 
+// what is output?
+#include <iostream>
+using namespace std;
+int fun1(int);
+int fun2(int);
+int fun1(int n){
+    if(n<=1) return 1;
+    return fun2(n-2) + fun1(n-1);
+}
+inf fun2(int n){
+    if(n<=0) return 0;
+    if(n%3==0) return fun2(n/2);
+    else       return fun1(n-3);
+}
+int main(){
+    int n;
+    cin>>n;
+    cout<< fun2(n)<<endl;
+    return 0;
+}
+// Calculate the output on n =13
+// Answer -> 14
+*/
+
+
+/*
+// Problem 50- 
+// what is output?
+#include <iostream>
+using namespace std;
+void gun(string s){
+    if(s[0]=='\0') return;
+    gun(s.substr(1));
+    cout<<s[0];
+}
+int main(){
+    string s;
+    cin>>s;
+    gun(s);
+    cout<<endl;
+    return 0;
+}
+// Calculate the output on s = "abac" (without quotes)
+// Answer -> caba
+*/
+
+
+/* 
+Finally I Complete 50 Problems On C++ 
+Next Move - I Will Make Sure Solve More Problems Soon.
+*/
+
+
+
+
 
 
 
